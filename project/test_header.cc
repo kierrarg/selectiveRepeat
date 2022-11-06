@@ -123,7 +123,7 @@ class SenderTest : public testing::Test {
 // testing can add new function 
 TEST_F(SenderTest, canAddNew) {
 	bool b = s->canAddNew();
-	EXPECT_TRUE(b == false);
+	EXPECT_FALSE(b);
 }
 
 // testing add new frame 
