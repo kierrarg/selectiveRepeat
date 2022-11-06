@@ -14,12 +14,14 @@ class Sender() {
 	void addNew();
 	// sets max size of sliding window  
 	void setWinSize(int s); 
-	// acknowledgment for s is received 	
-	void acknowledge(unsigned int s);
 	// returns # unacknowledged sequences 
 	int nrSeqInWin();
+	// returns the window size
+	int getWindowSize();
 	// returns the window
 	std::vector getWindow();
+	// overwrites the window with a new vector
+	void overwriteWindow(std::vector<unsigned int> newWin);
 	private: 
 	std::vector<unsigned int> sequence;
 	std::vector<unsigned int> window;

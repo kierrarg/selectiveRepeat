@@ -8,10 +8,6 @@ Sender::Sender() {
     }
 }
 
-void Sender::setWinSize(int s) {
-    windowSize = size;
-}
-
 bool Sender::canAddNew() {
     if (window.size() < windowSize)
         return true;
@@ -30,6 +26,10 @@ int Sender::addNew() {
     }
 }
 
+void Sender::setWinSize(int s) {
+    windowSize = size;
+}
+
 int Sender::nrSeqInWin() {
     int a = window.size();
     return a;
@@ -43,6 +43,6 @@ std::vector<unsigned int> Sender::getWindow() {
   return window;
 }
 
-void Sender::overwriteWindow(std::vector<unsigned int> vec) {
-    window = vec;
+void Sender::overwriteWindow(std::vector<unsigned int> newWin) {
+    window = newWin;
 }
