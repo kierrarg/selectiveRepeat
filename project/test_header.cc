@@ -107,19 +107,19 @@ ASSERT_TRUE(h_->getSeqNum() == 255);
 
 class SenderTest : public testing::Test {
 	protected:
-		ConcreteSender * s;
+		Sender * s;
 
-		void setUp() override {
-			s = new ConcreteSender;
+		void SetUp() override {
+			s = new Sender;
 		}
 
-		void tearDown() override {
+		void TearDown() override {
 			delete s;
 		}
 };
 
 // testing can add new function 
 TEST_F (SenderTest, canAddNew) {
-	s->canAddNew(1);
-	EXPECT_TRUE(s->canAddNew() == true);
+	bool b = s->canAddNew();
+	EXPECT_TRUE(b == false);
 }

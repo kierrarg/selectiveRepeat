@@ -19,7 +19,7 @@ class Sender {
 	// returns the window size
 	int getWinSize();
 	// returns the window
-	std::vector getWindow();
+	std::vector<unsigned int> getWindow();
 	// overwrites the window with a new vector
 	void overwriteWindow(std::vector<unsigned int> newWin);
 	private: 

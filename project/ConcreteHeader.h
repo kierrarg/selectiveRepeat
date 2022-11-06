@@ -1,5 +1,4 @@
-#ifndef CONCRETE_HEADER_H
-#define CONCRETE_HEADER_H
+#ifndef CONCRETE_HEADER_H #define CONCRETE_HEADER_H
 
 #include <cstdint>
 #define HEADER_SZ 4

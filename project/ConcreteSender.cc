@@ -14,7 +14,7 @@ bool Sender::canAddNew() {
     else
         return false;
 }
-
+/*
 int Sender::addNew() {
     if (canAddNew()) {
         int a = sequence.front();
@@ -46,3 +46,5 @@ std::vector<unsigned int> Sender::getWindow() {
 void Sender::overwriteWindow(std::vector<unsigned int> newWin) {
     window = newWin;
 }
+
+*/
