@@ -27,7 +27,7 @@ int Sender::addNew() {
 }
 
 void Sender::setWinSize(int s) {
-    windowSize = size;
+    windowSize = s;
 }
 
 int Sender::nrSeqInWin() {
