@@ -31,12 +31,9 @@ void Receiver::alterReceivedVec(std::vector<unsigned int> r, Sender s) {
 }
 
 void Receiver::sendBackUnackData(std::vector<unsigned int> r, Sender s) {
-    for (int i = 0; i < r.size(); i++) {
-        cache.push_back(r[i]);
-    }
 
     for (int i = 0; i < s.window.size(); i++) {
-        if (cache[i] == s.window[i]) {
+        if (r[i] == s.window[i]) {
             s.window.erase(s.window.begin() + i);
         }
     }
