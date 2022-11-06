@@ -1,6 +1,6 @@
 CC = g++
 TESTLIBS = -lgtest  -lgtest_main -lpthread
-OBJS = ConcreteHeader.o ConcreteSender.o test_header.o
+OBJS = ConcreteHeader.o ConcreteSender.o ConcreteReceiver.o test_header.o
 # HEADERDIRS =
 # CCFLAGS = -I $(HEADERDIRS)
 

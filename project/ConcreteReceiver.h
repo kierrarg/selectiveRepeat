@@ -5,6 +5,7 @@
 #include <vector>
 
 class Receiver {
+	public:
 	// constructor
 	Receiver();
 	// take all the data from the recieved vector and store it 

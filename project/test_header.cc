@@ -1,5 +1,6 @@
 #include "ConcreteHeader.h"
 #include "ConcreteSender.h"
+#include "ConcreteReceiver.h"
 #include "gtest/gtest.h"  // google test framework
 
 class HeaderTest : public testing::Test {
@@ -147,4 +148,32 @@ TEST_F (SenderTest, nrSeqInWin) {
 TEST_F (SenderTest, getWinSize) {
 	s->setWinSize(2);
 	ASSERT_TRUE(s->getWinSize() == 2);
+}
+
+
+
+class ReceiverTest : public testing::Test {
+	protected:
+		Receiver * r;
+
+		void SetUp() override {
+			r = new Receiver;
+		}
+
+		void TearDown() override {
+			delete r;
+		}
+};
+
+//take all data from received vector and store it
+TEST_F (ReceiverTest, storeReceivedData) {
+
+}
+//checks to see if data was lost
+TEST_F (ReceiverTest, checkLostData) {
+	
+}
+//clears window
+TEST_F (ReceiverTest, alterReceivedVec) {
+	
 }
