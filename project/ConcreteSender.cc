@@ -18,7 +18,7 @@ bool Sender::canAddNew() {
 int Sender::addNew() {
     if (canAddNew()) {
         int a = sequence.front();
-        sequence.erase(sequence.begin()); // this is new
+        sequence.erase(sequence.begin());
         window.push_back(a);
         return a;
     } else {
