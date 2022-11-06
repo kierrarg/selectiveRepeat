@@ -132,3 +132,9 @@ TEST_F(SenderTest, addNew) {
 	i = s->addNew();
 	ASSERT_TRUE(i == 2);
 }
+// sets max size of sliding window
+TEST_F (SenderTest, setWinSize) {
+	ASSERT_TRUE(s->getWinSize() == 0);
+	s->setWinSize(2);
+	ASSERT_TRUE(s->getWinSize() == 2);
+}
