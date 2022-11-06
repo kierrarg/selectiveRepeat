@@ -22,10 +22,13 @@ class Sender {
 	std::vector<unsigned int> getWindow();
 	// overwrites the window with a new vector
 	void overwriteWindow(std::vector<unsigned int> newWin);
-	private: 
-	std::vector<unsigned int> sequence;
+
 	std::vector<unsigned int> window;
 	int windowSize;
+	
+	private: 
+	std::vector<unsigned int> sequence;
+
 
 };
 
