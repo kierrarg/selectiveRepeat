@@ -35,7 +35,7 @@ int Sender::nrSeqInWin() {
     return a;
 }
 
-int Sender::getWindowSize() {
+int Sender::getWinSize() {
   return windowSize;
 }
 

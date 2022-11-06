@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 
-class Sender() {
+class Sender {
 	public: 
 	// constructor, n represents # of bits for sequence nums 
 	Sender();
@@ -17,7 +17,7 @@ class Sender() {
 	// returns # unacknowledged sequences 
 	int nrSeqInWin();
 	// returns the window size
-	int getWindowSize();
+	int getWinSize();
 	// returns the window
 	std::vector getWindow();
 	// overwrites the window with a new vector
