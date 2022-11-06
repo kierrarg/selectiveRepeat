@@ -138,3 +138,13 @@ TEST_F (SenderTest, setWinSize) {
 	s->setWinSize(2);
 	ASSERT_TRUE(s->getWinSize() == 2);
 }
+//returns # of unacknowledged sequences
+TEST_F (SenderTest, nrSeqInWin) {
+	s->nrSeqInWin()== 0;
+	ASSERT_TRUE(s->nrSeqInWin() == 0);
+}
+//returns the window size
+TEST_F (SenderTest, getWinSize) {
+	s->setWinSize(2);
+	ASSERT_TRUE(s->getWinSize() == 2);
+}
