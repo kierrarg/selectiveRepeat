@@ -3,9 +3,10 @@
 
 Sender::Sender() {
     windowSize = 0;
-    for (int i = 1; i <= 100; i++) {
-        sequence.push_back(i);
-    }
+    sequence.push_back(1);
+    sequence.push_back(2);
+    sequence.push_back(3);
+
 }
 
 bool Sender::canAddNew() {
