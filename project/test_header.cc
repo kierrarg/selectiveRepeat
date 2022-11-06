@@ -2,6 +2,7 @@
 #include "ConcreteSender.h"
 #include "ConcreteReceiver.h"
 #include "gtest/gtest.h"  // google test framework
+#include <vector>
 
 class HeaderTest : public testing::Test {
 protected:
@@ -155,25 +156,50 @@ TEST_F (SenderTest, getWinSize) {
 class ReceiverTest : public testing::Test {
 	protected:
 		Receiver * r;
+		Sender * s_;
 
 		void SetUp() override {
 			r = new Receiver;
+			s_ = new Sender;
 		}
 
 		void TearDown() override {
 			delete r;
+			delete s_;
 		}
 };
 
 //take all data from received vector and store it
 TEST_F (ReceiverTest, storeReceivedData) {
-
+	std::vector<unsigned int> i;
+       	i.push_back(1);
+	r->storeReceivedData(i);
+	EXPECT_EQ(r->receivedData.size(), i.size());	
 }
 //checks to see if data was lost
 TEST_F (ReceiverTest, checkLostData) {
-	
+	std::vector<unsigned int> i;
+	i.push_back(1);
+	Sender s;
+	s.setWinSize(1);
+	EXPECT_TRUE(r->checkLostData(i, s) == true);
 }
 //clears window
-TEST_F (ReceiverTest, alterReceivedVec) {
-	
+TEST_F (ReceiverTest, alterReceivedVec){
+	std::vector<unsigned int> i;
+	i.push_back(1);
+	Sender s;
+	s.setWinSize(1);
+	r->alterReceivedVec(i, s);
+	EXPECT_EQ(i.size(), 1);
 }
+//sends back unacknowledged data
+TEST_F (ReceiverTest, sendBackUnackData) {
+	std::vector<unsigned int> i;
+	i.push_back(1);
+	Sender s;
+	s.window.push_back(1); 
+	r->sendBackUnackData(i, s);
+	EXPECT_EQ(s.window.size(), 1);
+}
+

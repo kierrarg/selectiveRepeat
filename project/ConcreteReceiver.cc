@@ -6,7 +6,7 @@ Receiver::Receiver() {
 
 }
 
-void Receiver::storeRecievedData(std::vector<unsigned int> r) {
+void Receiver::storeReceivedData(std::vector<unsigned int> r) {
     for (int  i = 0; i < r.size(); i++){
         receivedData.push_back(r[i]);
     }
