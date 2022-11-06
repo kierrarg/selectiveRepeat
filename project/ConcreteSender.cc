@@ -4,7 +4,7 @@
 Sender::Sender() {
     windowSize = 0;
     for (int i = 1; i <= 100; i++) {
-        queue.push_back(i);
+        sequence.push_back(i);
     }
 }
 
@@ -17,8 +17,8 @@ bool Sender::canAddNew() {
 
 int Sender::addNew() {
     if (canAddNew()) {
-        int a = queue.front();
-        queue.erase(queue.begin()); // this is new
+        int a = sequence.front();
+        sequence.erase(sequence.begin()); // this is new
         window.push_back(a);
         return a;
     } else {
