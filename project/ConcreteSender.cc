@@ -3,6 +3,9 @@
 
 Sender::Sender() {
     windowSize = 0;
+    for (int i = 1; i <= 100; i++) {
+        sequence.push_back(i);
+    }
 }
 
 bool Sender::canAddNew() {
