@@ -11,7 +11,7 @@ class Sender {
 	// true if the window isn't full
 	bool canAddNew();
 	// void function that updates the vector
-	void addNew();
+	int addNew();
 	// sets max size of sliding window  
 	void setWinSize(int s); 
 	// returns # unacknowledged sequences 

@@ -119,7 +119,16 @@ class SenderTest : public testing::Test {
 };
 
 // testing can add new function 
-TEST_F (SenderTest, canAddNew) {
+TEST_F(SenderTest, canAddNew) {
 	bool b = s->canAddNew();
 	EXPECT_TRUE(b == false);
+}
+
+// testing add new frame 
+TEST_F(SenderTest, addNew) {
+	s->setWinSize(2);
+	int i = s->addNew();
+	ASSERT_TRUE(i == 1);
+	i = s->addNew();
+	ASSERT_TRUE(i == 2);
 }
