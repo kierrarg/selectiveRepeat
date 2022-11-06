@@ -25,7 +25,7 @@ class Sender {
 
 	std::vector<unsigned int> window;
 	int windowSize;
-	
+
 	private: 
 	std::vector<unsigned int> sequence;
 
