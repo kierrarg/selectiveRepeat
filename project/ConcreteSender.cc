@@ -30,10 +30,6 @@ void Sender::setWinSize(int s) {
     windowSize = s;
 }
 
-int Sender::nrSeqInWin() {
-    int a = window.size();
-    return a;
-}
 
 int Sender::getWinSize() {
   return windowSize;

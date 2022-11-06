@@ -14,8 +14,6 @@ class Sender {
 	int addNew();
 	// sets max size of sliding window  
 	void setWinSize(int s); 
-	// returns # unacknowledged sequences 
-	int nrSeqInWin();
 	// returns the window size
 	int getWinSize();
 	// returns the window
