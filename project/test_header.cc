@@ -1,4 +1,5 @@
 #include "ConcreteHeader.h"
+#include "ConcreteSender.h"
 #include "gtest/gtest.h"  // google test framework
 
 class HeaderTest : public testing::Test {
@@ -101,4 +102,24 @@ struct simplepacket * ptr = static_cast<struct simplepacket*> (h_->thePacket());
 ptr->header[1];
 h_->setSeqNum(255);
 ASSERT_TRUE(h_->getSeqNum() == 255);
+}
+
+
+class SenderTest : public testing::Test {
+	protected:
+		ConcreteSender * s;
+
+		void setUp() override {
+			s = new ConcreteSender;
+		}
+
+		void tearDown() override {
+			delete s;
+		}
+};
+
+// testing can add new function 
+TEST_F (SenderTest, canAddNew) {
+	s->canAddNew(1);
+	EXPECT_TRUE(s->canAddNew() == true);
 }
