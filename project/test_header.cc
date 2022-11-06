@@ -120,8 +120,18 @@ class SenderTest : public testing::Test {
 		}
 };
 
-// testing can add new function 
 TEST_F(SenderTest, canAddNew) {
+	s->setWinSize(3);
+	int b = s->addNew();
+	ASSERT_TRUE(b == 1);
+	b = s->addNew();
+	ASSERT_TRUE(b == 2);
+	b = s->addNew();
+	ASSERT_TRUE(b == 3);
+}
+
+// testing can add new function 
+TEST_F(SenderTest, canAddNewF) {
 	bool b = s->canAddNew();
 	EXPECT_FALSE(b);
 }
@@ -140,7 +150,6 @@ TEST_F (SenderTest, setWinSize) {
 	s->setWinSize(2);
 	ASSERT_TRUE(s->getWinSize() == 2);
 }
-
 //returns the window size
 TEST_F (SenderTest, getWinSize) {
 	s->setWinSize(2);
